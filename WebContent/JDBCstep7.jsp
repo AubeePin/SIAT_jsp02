@@ -53,8 +53,7 @@ try{
 <!-- Step 4 Statement Object -->
 <%
 
-String sql = "SELECT * FROM saram";
-
+String sql = "SELECT * FROM saram";//saram 테이블 모든 데이터 꺼내오기.
 
 PreparedStatement pstmt = conn.prepareStatement(sql);
 out.print("구문 생성 성공...<br>");
@@ -64,11 +63,19 @@ out.print("구문 생성 성공...<br>");
 
 <%
 
-//pstmt.executeQuery();// Read 즉 가지고 나오는 데이터가 있을 경우 사용
-pstmt.executeUpdate();// Create, Update, Delete 즉 가지고 나오는 데이터가 없을 경우 사용
+//pstmt.executeQuery(); // Read 즉 가지고 나오는 데이터가 있을경우 사용
+pstmt.executeUpdate(); // Create, Update, Delete 즉 가지고 나오는 데이터가 없는 경우 사용
 out.print("테이블 삭제 성공...<br>");
-
 %>
+
+<!-- Step 6 ResultSet Object -->
+
+<!--  
+C R U D 중에서 반환데이터가 있는 경우는 R 만이다.
+C U D의 경우는 반환되는 데이터가 없다. 따라서 CUD 는 step 6 이 생략된다.
+성공했을 경우는 1이 반환되고 실패햇을 경우에는 0이 반환된다.
+-->
+
 
 </body>
 </html>
