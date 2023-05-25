@@ -37,7 +37,7 @@
 try {
 	
 	//String host = "jdbc:mysql://localhost:3306/";
-	String host = "jdbc:mariadb://localhost:3306/comstudy21";
+	String host = "jdbc:mariadb://localhost:3306/mingyeong";
 	String id = "root";
 	String ps = "1234";
 
