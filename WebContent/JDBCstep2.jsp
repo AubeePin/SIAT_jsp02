@@ -25,7 +25,6 @@
 		
 		out.print("드라이버 로드 실패...<br/>" + err.getMessage());
 	}
-
 %>
 
 </body>
