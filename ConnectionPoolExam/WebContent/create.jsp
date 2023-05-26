@@ -11,13 +11,21 @@
 <body>
 
 <%
+String id = request.getParameter("id");
+String name = request.getParameter("name");
+Integer age = Integer.parseInt(request.getParameter("age"));
+
+
 
 //디비 연결 ->클래스에 있는거 연결
 Connection conn = ConnectionPool.get();
 
-String sql = "INSERT INTO saram VALUES('hong','gildong',11)";
+String sql = "INSERT INTO saram VALUES(?,?,?)";
 
 PreparedStatement pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1,id);
+	pstmt.setString(2,name);
+	pstmt.setInt(3,age);
 
 pstmt.executeUpdate();
 
